@@ -7,7 +7,7 @@ import org.junit.Test;
  * {@link StrictBankAccount}.
  * 
  */
-public final class TestStrictBankAccount {
+public class TestStrictBankAccount {
 
     /**
      * Used to test Exceptions on {@link StrictBankAccount}.
