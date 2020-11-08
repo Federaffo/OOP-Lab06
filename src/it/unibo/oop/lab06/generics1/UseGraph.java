@@ -13,7 +13,7 @@ public final class UseGraph {
      *            ignored
      */
     public static void main(final String... args) {
-        final Graph<String> g = null; // new GraphImpl<>();
+        final Graph<String> g =  new GraphImpl<>();
         g.addNode("a");
         g.addNode("b");
         g.addNode("c");
@@ -25,6 +25,30 @@ public final class UseGraph {
         g.addEdge("d", "e");
         g.addEdge("c", "a");
         g.addEdge("e", "a");
+        
+        
+        g.addNode("z");
+        g.addNode("x");
+        g.addNode("y");
+        g.addNode("o");
+        g.addNode("k");
+        g.addNode("fail");
+        g.addEdge("z", "k");
+        g.addEdge("z", "x");
+
+        g.addEdge("k", "fail");
+        
+        g.addEdge("x", "k");
+        g.addEdge("x", "o");
+        g.addEdge("x", "fail");
+        
+        g.addEdge("o", "k");
+        g.addEdge("o", "y");
+
+
+
+        
+        
         /*
          * Should print ["a","b","c","d","e"], in any order
          */
@@ -36,6 +60,6 @@ public final class UseGraph {
         /*
          * Must print either the path b,c,a or b,c,d,e,a
          */
-        System.out.println(g.getPath("b", "a"));
+        System.out.println(g.getPath("z", "y"));
     }
 }
